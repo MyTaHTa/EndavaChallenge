@@ -23,7 +23,7 @@ In the long version you may also want:
 8. Disable the http port (80) and get the app running over https (433) you already have an SSL :)  When using a proxy, it's preferrable to configure HTTPS at the proxy level and not at the application level, this way the WebSockets (3012) connection is also secured.
 9. Now go and change the SSH port to something like this (12445234312312356, yes you can't do it) but pls not 22
 10. Now install ufw and allow your port if you want to have SSH connection (maybe it will need some maintenance from time to time) close every other port that you dont need just to be sure that the Russians are not upon you...
-11. If you dont want Chinees bots digging day and night for your password Fail2Ban, enabled  = true, 
+11. If you dont want some random Chinees bots digging day and night for your password Fail2Ban, enabled  = true, 
          bantime  = 31536000, findtime = 18144000
 
 This is getting seriosly long, sorry, but someone may need it :)
