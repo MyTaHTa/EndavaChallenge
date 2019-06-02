@@ -25,4 +25,4 @@ In the long version you may also want:
 10. Now install ufw and allow your port (if you want to have SSH connection, maybe you it will need some maintenance (from time to time) close every other port that you dont need just to be sure that the Russians are not upon you...
 11. If you dont want Chinees bots digging day and night for your password Fail2Ban = 9999 days
 
-This is getting seriosly long sorry but someone may need it :)
+This is getting seriosly long, sorry, but someone may need it :)
