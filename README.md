@@ -11,6 +11,7 @@ What is happening there in short
 2. Once you have the Conteiner registry deployed in Azure the Docker will start building an Image.
 3. The Image is pushed to the container.
 4. Now you can Release your Linux Web App so choose a web plan and try it.
+5. Get a Azure backup plan + Availability test and get the APP running on SSL from the switch menu.
 
 In the long version you may also want:
 1. Get a linux VM up and running with latest updates on ''Ubuntu'' (maybe)
