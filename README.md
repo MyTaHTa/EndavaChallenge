@@ -1,6 +1,7 @@
 # Endavachallenge
 
 This is a simple implementation of Bitwarden_rs server API on Azure Cloud (containerized web app + database running on linux)
+
 The example implements https://github.com/dani-garcia/bitwarden_rs
 
 It can be tested with all apps from the official version https://bitwarden.com/#download
