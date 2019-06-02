@@ -1,0 +1,45 @@
+trigger:
+- master
+
+pool:
+  name: Hosted Ubuntu 1604
+
+steps:
+- script: |
+   ls -la
+   curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $(cat rust-toolchain)
+   echo "##vso[task.prependpath]$HOME/.cargo/bin"
+  displayName: 'Install Rust'
+
+- script: |
+   rustc -Vv
+   cargo -V
+  displayName: 'Query rust and cargo versions'
+
+- script: 'cargo build --all-features'
+  displayName: 'Build project'
+
+- task: AzureResourceGroupDeployment@2
+  displayName: 'Azure Deployment:Create Azure Container Registry'
+  inputs:
+    azureSubscription: 'bitwardenrs - Azure'
+    resourceGroupName: 'bitwardenrs-rg'
+    location: 'West Europe'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/Microsoft/devops-project-samples/057f6cc268a62922d012067d069d58684e967d0a/armtemplates/webapp-containers/containerRegistry-template.json'
+    overrideParameters: '-registryName "bitwardenrsacr" -registryLocation "West Europe" -registrySku "Premium"'
+
+- task: Docker@1
+  displayName: 'Build an image'
+  inputs:
+    azureSubscriptionEndpoint: 'bitwardenrs - Azure'
+    azureContainerRegistry: bitwardenrsacr.azurecr.io
+    imageName: 'bitwardenrs:$(Build.BuildId)'
+
+- task: Docker@1
+  displayName: 'Push an image'
+  inputs:
+    azureSubscriptionEndpoint: 'bitwardenrs - Azure'
+    azureContainerRegistry: bitwardenrsacr.azurecr.io
+    command: 'Push an image'
+    imageName: 'bitwardenrs:$(Build.BuildId)'
