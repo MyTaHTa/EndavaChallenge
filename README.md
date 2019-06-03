@@ -5,7 +5,7 @@ The example implements https://github.com/dani-garcia/bitwarden_rs
 
 https://dev.azure.com/EndavaDevOps//bitwardenrs/_home - DevOps Project HomePage
 
-https://portal.azure.com/#@mtzvetkovawsgmail.onmicrosoft.com/resource/subscriptions/5007edd0-4dd4-4f11-ae02-8bec017df56c/resourceGroups/bitwardenrs-rg/overview - Azure Portal HomePage
+https://portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Resources%2Fresources - Azure Portal HomePage
 
 It can be tested with all apps from the official version https://bitwarden.com/#download
 
